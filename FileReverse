@@ -1,0 +1,32 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+
+public class FileReverse {
+
+    /**
+     * @param args
+     */
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        File f = new File("C:/Users/user/Desktop/Java,Selenium/nums.txt");
+        FileReader fr;
+        try {
+            fr = new FileReader(f);
+            char c[] = new char[(int)f.length()];
+            fr.read(c, 0, (int)f.length());
+            StringBuilder sb = new StringBuilder();
+            sb.append(c);
+            sb.reverse();
+            System.out.println(sb);
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }}
